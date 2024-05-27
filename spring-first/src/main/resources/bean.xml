@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/util/spring-util.xsd
+        http://www.springframework.org/schema/util
+         http://www.springframework.org/schema/context
+          https://www.springframework.org/schema/context/spring-context.xsd">
+
+    <bean id="user" class="com.yao.User">
+
+    </bean>
+
+    <bean id="animalImpl" class="com.yao.AnimalImpl">
+
+    </bean>
+
+    <bean id="book" class="com.yao.di.Book">
+        <constructor-arg index="0" value="backend"/>
+        <constructor-arg index="1" value="shangxue"/>
+        <property name="bname" value="frontend dev">
+
+        </property>
+        <property name="author" value="shangguigu">
+
+        </property>
+    </bean>
+
+    <bean id="bookCon" class="com.yao.di.Book">
+        <constructor-arg name="bname" value="java开发">
+
+        </constructor-arg>
+        <constructor-arg name="author" value="shangguigu">
+
+        </constructor-arg>
+    </bean>
+
+<!--    <bean id="dept" class="com.yao.ditest.Dept">-->
+<!--        <property name="dname" value="guard">-->
+
+<!--        </property>-->
+
+<!--    </bean>-->
+    <bean id="emp" class="com.yao.ditest.Emp">
+<!--        <property name="dept" ref="dept">-->
+
+<!--        </property>-->
+        <property name="dept">
+            <bean id="dept" class="com.yao.ditest.Dept">
+                <property name="dname" value="guard">
+
+                </property>
+
+            </bean>
+        </property>
+        <property name="ename" value="lucy">
+
+        </property>
+        <property name="age" value="50">
+
+        </property>
+
+    </bean>
+</beans>
