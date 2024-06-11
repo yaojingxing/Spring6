@@ -16,7 +16,8 @@ public class TestUser {
         user.add();
     }
 
-    public static void main(String[] args) {
+    public static void main(String
+                                    [] args) {
         ApplicationContext context = new ClassPathXmlApplicationContext("bean.xml");
         User user = (User)context.getBean("user");
 
